@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/color" android:title="@string/color">
+        <menu>
+            <item android:id="@+id/blue" android:title="@string/blue"/>
+            <item android:id="@+id/red" android:title="@string/red"/>
+            <item android:id="@+id/green" android:title="@string/green"/>
+        </menu>
+    </item>
+    <item android:id="@+id/create" android:title="@string/create">
+        <menu>
+            <item android:id="@+id/create_button" android:title="@string/button"></item>
+            <item android:id="@+id/create_textview" android:title="@string/textview"></item>
+        </menu>
+    </item>
+    <item android:id="@+id/exit" android:title="@string/exit"/>
+</menu>
