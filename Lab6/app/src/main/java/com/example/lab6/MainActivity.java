@@ -1,15 +1,13 @@
 package com.example.lab6;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,16 +38,17 @@ public class MainActivity extends AppCompatActivity implements
         if(v==button1) {
             LayoutInflater inflater = getLayoutInflater();
             View layout = inflater.inflate(R.layout.toast_layout,null);
-            TextView text = layout.findViewById(R.id.textView);
-            text.setText(R.string.toast_text);
+            TextView text = (TextView) layout.findViewById(R.id.textView);
+            EditText editText = (EditText) findViewById(R.id.editText);
+            text.setText(editText.getText());
             Toast toast = new Toast(getApplicationContext());
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.FILL, 0, 0);
+            toast.setDuration(Toast.LENGTH_LONG);
             toast.setView(layout);
             toast.show();
         }
         else if(v==button2) {
-            createNotificationChannel();
+//            createNotificationChannel();
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                     Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -70,18 +69,18 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = getString(R.string.channel_name);
-            String description = getString(R.string.channel_description);
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new
-                    NotificationChannel(CHANNEL_ID, name, importance);
-            channel.setDescription(description);
-            NotificationManager notificationManager =
-                    getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
+//    private void createNotificationChannel() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            CharSequence name = getString(R.string.channel_name);
+//            String description = getString(R.string.channel_description);
+//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+//            NotificationChannel channel = new
+//                    NotificationChannel(CHANNEL_ID, name, importance);
+//            channel.setDescription(description);
+//            NotificationManager notificationManager =
+//                    getSystemService(NotificationManager.class);
+//            notificationManager.createNotificationChannel(channel);
+//        }
+//    }
 
 }
