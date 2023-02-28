@@ -25,6 +25,22 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Уведомление в строке состояния" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сообщение для уведомления:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Привет! Я всплывающее уведомление!" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
